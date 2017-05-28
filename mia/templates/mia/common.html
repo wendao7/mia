@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>{% block title%}{% endblock %}</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static '/mia/css/materialize.min.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static '/mia/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Yuqian Zhang</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'mia:index' %}">home</a></li>
+        <li><a href="{% url 'mia:experience' %}">experience</a></li>
+        <li><a href="{% url 'mia:publications' %}">publications</a></li>
+        <li><a href="{% url 'mia:interests' %}">interests</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li class="blck-text"><a href="{% url 'mia:index' %}">home</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+        <div class="row center">
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    
+    <div class="parallax"><img src="{% static '/mia/images/background1.jpg' %}" alt="Unsplashed background img 1"></div>
+  </div>
+
+  {% block index %}{% endblock %}
+  {% block experience %}{% endblock %}
+  {% block publications %}{% endblock %}
+  {% block interests %}{% endblock %}
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Address</h5>
+          <address>
+          700 Riddle Road, Apt 602,<br />
+          Cincinnati, OH, 45220, USA
+          </address>
+
+
+        </div>
+
+        <div class="col l6 s12">
+          <h5 class="white-text">Contact Me</h5>
+          <ul>
+            <li>Number: <a class="white-text" href="#!">(1)513-372-2362</a></li>
+            <li>Email: <a class="white-text" href="#!">zhang4yq@mail.uc.edu</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize and Parallax Template Powered by Django</a> © 2017- Copyright Yuqian Zhang
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static '/mia/js/materialize.js' %}"></script>
+  <script src="{% static '/mia/js/init.js' %}"></script>
+
+  </body>
+</html>
+
